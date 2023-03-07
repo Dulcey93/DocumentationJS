@@ -1,7 +1,11 @@
-const emoji = '👍🏼';
-// El paramaetro que recibe el metodo es el indice del arreglo
-// Para obtener el valor del punto de código Unicode de un carácter específico de este emoji, puedes usar el método .codePointAt() de la siguiente manera:
-console.log(emoji.codePointAt(0)); // salida: 128077
-// También puedes obtener el valor del punto de código Unicode de cualquier otro carácter del emoji, especificando el índice del carácter como argumento para el método .codePointAt(). Por ejemplo, para obtener el valor del punto de código Unicode del segundo carácter del emoji, puedes hacer lo siguiente:
-console.log(emoji.codePointAt(1)); // salida: 127995
-// En este caso, el método .codePointAt() devuelve el valor del punto de código Unicode del segundo carácter del emoji almacenado en la variable emoji, que es 127995 (el valor del punto de código Unicode correspondiente a la tez de piel clara). Cabe destacar que los índices de los caracteres comienzan en 0.
+// El método String.fromCharCode() no es parte de ES6, sino que es un método heredado de versiones anteriores de JavaScript. Sin embargo, todavía se puede utilizar en la versión actual de JavaScript (ES6).
+
+const codigo1 = 72;
+const codigo2 = 111;
+const codigo3 = 108;
+const codigo4 = 97;
+
+const texto = String.fromCharCode(codigo1, codigo2, codigo3, codigo4);
+console.log(texto); // salida: "Hola"
+
+// En este ejemplo, el método String.fromCharCode() se utiliza para crear una cadena de texto a partir de los códigos de caracteres Unicode de los caracteres "H", "o", "l" y "a". Los códigos de caracteres Unicode se especifican como argumentos separados por comas para el método.
