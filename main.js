@@ -1,7 +1,5 @@
-const string1 = 'Hola';
-const string2 = 'Mundo';
-const string3 = '!';
-const resultado = string1.concat(' ', string2, string3);
-console.log(resultado); // salida: "Hola Mundo!"
+const mensaje = 'Hola Mundo!';
+const comienzaConHola = mensaje.startsWith('Hola');
+console.log(comienzaConHola); // salida: true
 
-// En este ejemplo, el método String.concat() se utiliza para concatenar varias cadenas de texto juntas. Se crean tres variables string1, string2 y string3, cada una de las cuales contiene una cadena de texto. Luego, el método concat() se utiliza para concatenar estas cadenas en una sola cadena. El método toma una cantidad variable de argumentos y los concatena en orden.
+// En este ejemplo, el método String.startsWith() se utiliza para verificar si una cadena de texto comienza con una subcadena dada. La variable mensaje contiene una cadena de texto que dice "Hola Mundo!". Luego, el método startsWith() se utiliza para verificar si la cadena de texto comienza con la subcadena "Hola". El resultado de la verificación se almacena en la variable comienzaConHola, que es un valor booleano (true o false).
