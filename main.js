@@ -1,17 +1,7 @@
-const codigo1 = 128077;
-const codigo2 = 127995;
-const codigo3 = 128516;
+const string1 = 'Hola';
+const string2 = 'Mundo';
+const string3 = '!';
+const resultado = string1.concat(' ', string2, string3);
+console.log(resultado); // salida: "Hola Mundo!"
 
-const emoji = String.fromCodePoint(codigo1, codigo2, codigo3);
-console.log(emoji); // salida: "👍🏼💛😄"
-// En este ejemplo, el método String.fromCodePoint() se utiliza para crear una cadena de texto que representa un emoji compuesto por tres caracteres Unicode diferentes. Los códigos de caracteres Unicode se especifican como argumentos separados por comas para el método.
-
-// El método String.fromCodePoint() también puede tomar una cantidad variable de argumentos y concatenarlos en una cadena de texto. Por ejemplo:
-
-const codigo4 = 97;
-const codigo5 = 98;
-const codigo6 = 99;
-const codigo7 = 128520;
-
-const texto = String.fromCodePoint(codigo4, codigo5, codigo6, codigo7);
-console.log(texto); // salida: "abc😸"
+// En este ejemplo, el método String.concat() se utiliza para concatenar varias cadenas de texto juntas. Se crean tres variables string1, string2 y string3, cada una de las cuales contiene una cadena de texto. Luego, el método concat() se utiliza para concatenar estas cadenas en una sola cadena. El método toma una cantidad variable de argumentos y los concatena en orden.
