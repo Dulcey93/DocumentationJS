@@ -1,19 +1,19 @@
 // Supongamos que tenemos la siguiente cadena:
 
-const cadena = "Hola mundo!";
+const cadena = "Hola, ¿cómo estás?, espero que bien.";
 
-// Y queremos obtener la subcadena "mundo" que está en medio de la cadena. Podemos hacerlo de la siguiente manera utilizando el método substring():
+// Y queremos dividir esta cadena en un arreglo de subcadenas, utilizando como separador la coma seguida de un espacio (, ). Podemos hacerlo de la siguiente manera utilizando el método split():
 
-const subcadena = cadena.substring(5, 10);
+const arreglo = cadena.split(", ");
 
 
-// En este caso, el método substring() toma los caracteres que están entre las posiciones 5 y 10 de la cadena original (sin incluir el caracter en la posición 10), creando una nueva subcadena que se guarda en la variable subcadena. Ahora podemos mostrar esta subcadena en una salida de datos:
+// En este caso, el método split() divide la cadena original en varias subcadenas, cada vez que encuentra el separador , en la cadena original. Las subcadenas resultantes se guardan en un arreglo que se asigna a la variable arreglo. Ahora podemos mostrar este arreglo en una salida de datos:
 
-console.log(subcadena); // "mundo"
+console.log(arreglo); // ["Hola", "¿cómo estás?", "espero que bien."]
 
-// Como puedes ver, el método substring() nos ha permitido obtener una parte de la cadena original. También es posible utilizar valores negativos para contar desde el final de la cadena:
+// Como puedes ver, el método split() nos ha permitido dividir la cadena original en varias subcadenas, utilizando como separador la coma seguida de un espacio. También es posible utilizar otros separadores, como por ejemplo un espacio simple ( ), una letra, un número, etc.
 
-const subcadena1 = cadena.substring(5, -2);
-console.log(subcadena1); // "Hola"
+const arreglo1 = cadena.split(" "); // ["Hola,", "¿cómo", "estás?,", "espero", "que", "bien."]
+const arreglo2 = cadena.split("?"); // ["Hola, ¿cómo estás,", " espero que bien."]
 
-// En este caso, el método substring() interpreta el valor negativo como si fuera 0, por lo que toma los caracteres desde el inicio de la cadena hasta la posición -2 (sin incluir el caracter en la posición -2). De esta manera, obtenemos la subcadena "Hola".
+// En el primer ejemplo, hemos utilizado un espacio simple como separador, dividiendo la cadena en cada lugar donde hay un espacio en la cadena original. En el segundo ejemplo, hemos utilizado el signo de interrogación como separador, dividiendo la cadena en cada lugar donde hay un signo de interrogación en la cadena original.
