@@ -1,6 +1,6 @@
-const originalString = "hello world";
-const upperCaseString = originalString.toUpperCase();
+const originalString = "   Hello world!   ";
+const trimmedString = originalString.trim();
 
-console.log(upperCaseString); // output: "HELLO WORLD"
+console.log(trimmedString); // output: "Hello world!"
 
-// En este ejemplo, el método .toUpperCase() convierte todas las letras del string originalString en mayúsculas y lo guarda en la variable upperCaseString. Luego, la función console.log() imprime upperCaseString en la consola, lo que mostrará el string convertido a mayúsculas.
+// En este ejemplo, el método .trim() elimina todos los espacios en blanco al principio y al final del string originalString y lo guarda en la variable trimmedString. Luego, la función console.log() imprime trimmedString en la consola, lo que mostrará el string sin los espacios en blanco al principio y al final.
