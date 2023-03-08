@@ -1,12 +1,48 @@
-// El método String.raw() en ES6 se utiliza para crear una cadena de caracteres en bruto (raw string) que contiene secuencias de escape de caracteres literales tal como están escritos. Aquí te muestro un ejemplo:
+// Suma
+let a = 5;
+let b = 10;
+let c = a + b; // c es igual a 15
+let d = "Hola ";
+let e = "mundo";
+let f = d + e; // f es igual a "Hola mundo"
 
-const name = "John";
-const age = 25;
+// Resta
+let g = 20;
+let h = 10;
+let i = g - h; // i es igual a 10
 
-const message = String.raw`Hello, my name is ${name} and I am ${age} years old.`;
+// Multiplicación
+let j = 5;
+let k = 10;
+let l = j * k; // l es igual a 50
 
-console.log(message); // output: "Hello, my name is John and I am 25 years old."
+// División
+let m = 100;
+let n = 20;
+let o = m / n; // o es igual a 5
 
-// En este ejemplo, la plantilla de cadena de caracteres se define usando el método String.raw(), que toma como argumento un array de literales de plantilla y los valores interpolados. En la plantilla, los valores interpolados se insertan en los espacios reservados ${}. La cadena de caracteres en bruto devuelta por el método String.raw() conserva todas las secuencias de escape de caracteres literales en su forma original.
+// Resto
+let p = 10;
+let q = 3;
+let r = p % q; // r es igual a 1
 
-// El resultado es la cadena de caracteres "Hello, my name is John and I am 25 years old." que se guarda en la variable message y se imprime en la consola mediante console.log().
+// Incremento
+let s = 5;
+s++; // s es igual a 6
+
+// Decremento
+let t = 10;
+t--; // t es igual a 9
+
+/* También es posible realizar operaciones aritméticas con asignación, utilizando los operadores +=, -=, *=, /= y %=: */
+
+let u = 5;
+u += 10; // u es igual a 15
+let v = 10;
+v -= 5; // v es igual a 5
+let w = 3;
+w *= 4; // w es igual a 12
+let x = 20;
+x /= 5; // x es igual a 4
+let y = 10;
+y %= 3; // y es igual a 1
