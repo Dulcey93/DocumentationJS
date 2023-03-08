@@ -1,48 +1,78 @@
-// Suma
-let a = 5;
-let b = 10;
-let c = a + b; // c es igual a 15
-let d = "Hola ";
-let e = "mundo";
-let f = d + e; // f es igual a "Hola mundo"
+const euler = Math.E
+const logn2 = Math.LN2
+const logn10 = Math.LN10
+const log2E = Math.LOG2E
+const logn10E = Math.LOG10E
+const PI = Math.PI
+const raiz = Math.SQRT1_2
+const raiz2 = Math.SQRT2
 
-// Resta
-let g = 20;
-let h = 10;
-let i = g - h; // i es igual a 10
+console.log(euler);
+console.log(logn2);
+console.log(logn10);
+console.log(log2E);
+console.log(logn10E);
+console.log(PI);
+console.log(raiz);
+console.log(raiz2);
 
-// Multiplicación
-let j = 5;
-let k = 10;
-let l = j * k; // l es igual a 50
+/* ===> METODOS MATEMATICOS <=== */
 
-// División
-let m = 100;
-let n = 20;
-let o = m / n; // o es igual a 5
+Math.abs(-5);             // 5
+Math.sign(-5);            // -1
+Math.exp(1);              // e, o sea, 2.718281828459045
+Math.expm1(1);            // 1.718281828459045
+Math.max(1, 40, 5, 15);   // 40
+Math.min(5, 10, -2, 0);   // -2
+Math.pow(2, 10);          // 1024 (Equivale a 2**10)
+Math.sqrt(2);             // 1.4142135623730951 (Equivale a Math.SQRT2)
+Math.cbrt(2);             // 1.2599210498948732
+Math.imul(0xffffffff, 7); // -7
 
-// Resto
-let p = 10;
-let q = 3;
-let r = p % q; // r es igual a 1
+// Ejemplo de clz32 (count leading zeros)
+const x = 1;
+"0".repeat(Math.clz32(x)) + x.toString(2);
+// Devuelve "00000000000000000000000000000001"
 
-// Incremento
-let s = 5;
-s++; // s es igual a 6
 
-// Decremento
-let t = 10;
-t--; // t es igual a 9
 
-/* También es posible realizar operaciones aritméticas con asignación, utilizando los operadores +=, -=, *=, /= y %=: */
+/* ===> RANDOM <===*/
 
-let u = 5;
-u += 10; // u es igual a 15
-let v = 10;
-v -= 5; // v es igual a 5
-let w = 3;
-w *= 4; // w es igual a 12
-let x = 20;
-x /= 5; // x es igual a 4
-let y = 10;
-y %= 3; // y es igual a 1
+// Obtenemos un número al azar entre [0, 1) con 16 decimales
+let y = Math.random();
+
+// Multiplicamos dicho número por el valor máximo que buscamos (5)
+y = y * 5;
+
+// Redondeamos inferiormente, quedándonos sólo con la parte entera
+y = Math.floor(x);
+
+/* ===> Métodos de logaritmos <===*/
+
+Math.log(2);    // 0.6931471805599453
+Math.log10(2);  // 0.3010299956639812
+Math.log2(2);   // 1
+Math.log1p(2);  // 1.0986122886681096
+
+/* ===> Métodos de redondeo  <===*/
+
+// Redondeo natural, el más cercano
+Math.round(3.75);           // 4
+Math.round(3.25);           // 3
+
+// Redondeo superior (el más alto)
+Math.ceil(3.75);            // 4
+Math.ceil(3.25);            // 4
+
+// Redondeo inferior (el más bajo)
+Math.floor(3.75);           // 3
+Math.floor(3.25);           // 3
+
+// Redondeo con precisión
+Math.round(3.123456789);    // 3
+Math.fround(3.123456789);   // 3.1234567165374756
+
+// Truncado (sólo parte entera)
+Math.trunc(3.75);           // 3
+Math.round(-3.75);          // -4
+Math.trunc(-3.75);          // -3
