@@ -2,17 +2,17 @@
 
 const cadena = "Hola mundo!";
 
-// Y queremos obtener la subcadena "mundo" que está en medio de la cadena. Podemos hacerlo de la siguiente manera utilizando el método slice():
+// Y queremos obtener la subcadena "mundo" que está en medio de la cadena. Podemos hacerlo de la siguiente manera utilizando el método substr():
 
-const subcadena = cadena.slice(5, 10);
+const subcadena = cadena.substr(5, 5);
 
-// En este caso, el método slice() toma los caracteres que están entre las posiciones 5 y 10 de la cadena original (la posición 0 es el primer carácter de la cadena), creando una nueva subcadena que se guarda en la variable subcadena. Ahora podemos mostrar esta subcadena en una salida de datos:
+// En este caso, el método substr() toma los 5 caracteres que están a partir de la posición 5 de la cadena original, creando una nueva subcadena que se guarda en la variable subcadena. Ahora podemos mostrar esta subcadena en una salida de datos:
 
 console.log(subcadena); // "mundo"
 
-// El método slice() nos ha permitido obtener una parte de la cadena original. También es posible utilizar valores negativos para contar desde el final de la cadena:
+// Como puedes ver, el método substr() también nos ha permitido obtener una parte de la cadena original. También es posible utilizar valores negativos para contar desde el final de la cadena:
 
-const subcadena1 = cadena.slice(-6, -1);
+const subcadena1 = cadena.substr(-6, 5);
 console.log(subcadena1); // "mundo"
 
-// utilizamos valores negativos para contar desde el final de la cadena, y obtenemos la misma subcadena que en el ejemplo anterior.
+// En este caso, utilizamos valores negativos para contar desde el final de la cadena, y obtenemos la misma subcadena que en el ejemplo anterior.
