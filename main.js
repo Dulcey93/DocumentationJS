@@ -2,20 +2,17 @@
 
 const cadena = "Hola mundo!";
 
-// Y queremos reemplazar la palabra "mundo" por "amigos". Podemos hacerlo de la siguiente manera utilizando el método replace():
+// Y queremos obtener la subcadena "mundo" que está en medio de la cadena. Podemos hacerlo de la siguiente manera utilizando el método slice():
 
-const nuevaCadena = cadena.replace("mundo", "amigos");
+const subcadena = cadena.slice(5, 10);
 
-// En este caso, el método replace() busca la palabra "mundo" en la cadena original y la reemplaza por la palabra "amigos", creando una nueva cadena que se guarda en la variable nuevaCadena. Ahora podemos mostrar esta cadena en una salida de datos:
+// En este caso, el método slice() toma los caracteres que están entre las posiciones 5 y 10 de la cadena original (la posición 0 es el primer carácter de la cadena), creando una nueva subcadena que se guarda en la variable subcadena. Ahora podemos mostrar esta subcadena en una salida de datos:
 
-console.log(nuevaCadena); // "Hola amigos!"
+console.log(subcadena); // "mundo"
 
-// la palabra "mundo" ha sido reemplazada por la palabra "amigos" utilizando el método replace().
+// El método slice() nos ha permitido obtener una parte de la cadena original. También es posible utilizar valores negativos para contar desde el final de la cadena:
 
-// Además, es posible utilizar expresiones regulares con el método replace() para hacer reemplazos más complejos. Por ejemplo, podemos utilizar una expresión regular para reemplazar todas las ocurrencias de una palabra en una cadena:
+const subcadena1 = cadena.slice(-6, -1);
+console.log(subcadena1); // "mundo"
 
-const cadena1 = "La casa es roja y la puerta es roja también.";
-const nuevaCadena1 = cadena1.replace(/roja/g, "verde");
-console.log(nuevaCadena1); // "La casa es verde y la puerta es verde también."
-
-// En este caso, utilizamos la expresión regular /roja/g para buscar todas las ocurrencias de la palabra "roja" en la cadena original y reemplazarlas por la palabra "verde". El modificador "g" indica que la búsqueda se hará globalmente en toda la cadena.
+// utilizamos valores negativos para contar desde el final de la cadena, y obtenemos la misma subcadena que en el ejemplo anterior.
