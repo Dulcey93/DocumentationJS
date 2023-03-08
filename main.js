@@ -1,10 +1,9 @@
-// El método padStart() se utiliza para agregar caracteres al inicio de una cadena hasta que la cadena tenga una longitud determinada. Esto puede ser útil para formatear cadenas o para alinearlas correctamente en una salida de datos.
+// El método repeat() se utiliza para repetir una cadena un número determinado de veces. Esto puede ser útil para crear cadenas de caracteres repetidas o para formatear una salida de datos.
 
-const numero = "23";
-const numeroFormateado = numero.padStart(5, "0");
+const asteriscos = "*".repeat(5);
 
-console.log(numero); // "23"
-console.log(numeroFormateado); // "00023"
+console.log(asteriscos); // "*****"
 
 
-// la cadena numero tiene una longitud de 2 caracteres, mientras que la cadena numeroFormateado tiene una longitud de 5 caracteres después de haber sido formateada con ceros agregados al inicio.
+
+// la cadena "*" se repite 5 veces utilizando el método repeat() y se muestra en la consola como una cadena de 5 asteriscos.
