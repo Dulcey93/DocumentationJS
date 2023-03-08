@@ -1,6 +1,7 @@
 {
     "conventionalCommits.scopes": [
         "First void commit",
-        "Add Exercise"
+        "Add Exercise",
+        "Operadores ES6"
     ]
 }
