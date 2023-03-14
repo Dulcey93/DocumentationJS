@@ -1,6 +1,3 @@
-// El segundo "saludar" (nombre de la función) se suele omitir: es redundante
-const saludo = function saludar() {
-    return "Hola";
-  };
-  
-  saludo(); // 'Hola'
+const saludar = new Function("return 'Hola';");
+
+saludar(); // 'Hola'
