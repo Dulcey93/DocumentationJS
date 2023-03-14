@@ -1,14 +1,16 @@
-function sum(a, b, callback) {
-    var result = a + b;
-    callback(result);
-  }
+// Función autoejecutable
+(function () {
+    console.log("Hola!!");
+  })();
   
-  function displayResult(value) {
-    console.log("El resultado es:", value);
-  }
+  // Función autoejecutable con parámetros
+  (function (name) {
+    console.log(`¡Hola, ${name}!`);
+  })("Manz");
+/*   Ten en cuenta, que si la función autoejecutable devuelve algún valor con return, a diferencia de las funciones por expresión, en este caso lo que se almacena en la variable es el valor que devuelve la función autoejecutada: */
+  const f = (function (name) {
+    return `¡Hola, ${name}!`;
+  })("Manz");
   
-  sum(10, 5, displayResult);
-/* 
-  En este ejemplo, tenemos una función sum que acepta dos números y un callback. La función suma los dos números y llama al callback con el resultado. Luego, tenemos una función displayResult que simplemente muestra el resultado en la consola.
-
-Por último, llamamos a la función sum con los números 10 y 5, y pasamos la función displayResult como callback. Cuando se llama a la función sum, se calcula la suma y se llama al callback con el resultado. En este caso, el callback es la función displayResult, que muestra el resultado en la consola. */
+  f; // '¡Hola, Manz!`
+  typeof f; // 'string'
