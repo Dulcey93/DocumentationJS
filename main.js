@@ -1,18 +1,15 @@
-// Clausura: Función incr()
-function cont (num) {
-
-    return function () {
-      num++;
-      return num;
-    };
-  }
-
-
-  const incr = cont(5)
+/* const func = function () {
+    return "Función tradicional.";
+  };
   
-  typeof incr; // 'function'
-  incr(); // 1
-  incr(); // 2
-  incr(); // 3
-  console.log(incr())
-  console.log(incr())
+  const func = () => {
+    return "Función flecha.";
+  };
+
+  const func = function () {
+    return "Función tradicional.";
+  };
+  
+  const func = () => {
+    return "Función flecha.";
+  }; */
