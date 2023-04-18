@@ -1,24 +1,25 @@
-/* Ejemplo de Callbacks anidados */
-//Supongamos que queremos cargar una lista de usuarios de una API utilizando callbacks anidados. En este ejemplo, utilizaremos la función fetch para realizar la solicitud HTTP y recuperar los datos de la API, y utilizaremos callbacks anidados para manejar los diferentes estados de la solicitud:
-function obtenerUsuarios(callback) {
-    fetch('https://jsonplaceholder.typicode.com/users')
-        .then(response => response.json())
-        .then(data => callback(null, data))
-        .catch(error => callback(error, null));
+/* Ejemplo de Callbacks reutilizables */
+/* Supongamos que queremos crear una función que tome una lista de números y una función de transformación como argumentos, y devuelva una nueva lista que contenga los números transformados. En este ejemplo, utilizaremos callbacks reutilizables para permitir que los usuarios pasen cualquier función de transformación que deseen: */
+const transformarLista = (lista, transformacion) => {
+    const listaTransformada = [];
+    lista.forEach(numero => {
+        listaTransformada.push(transformacion(numero));
+    });
+    return listaTransformada;
 }
 
-obtenerUsuarios((error, usuarios) => {
-    if (error) {
-        console.log(`Se produjo un error: ${error}`);
-    } else {
-        console.log('Lista de usuarios:');
-        usuarios.forEach(usuario => {
-            console.log(`- ${usuario.name}`);
-        });
-    }
-});
-//En este ejemplo, la función obtenerUsuarios es una función que realiza una solicitud HTTP para obtener una lista de usuarios de una API. La función toma un callback como argumento, que se llama cuando se completa la solicitud. Si la solicitud es exitosa, el callback se llama con los datos de la respuesta como segundo argumento. Si la solicitud falla, el callback se llama con el error como primer argumento.
+const duplicarNumero = numero => numero * 2;
+const elevarAlCuadrado = numero => numero ** 2;
 
-//Luego, la función obtenerUsuarios se llama pasando un callback que imprime la lista de usuarios en la consola. El callback verifica si hay un error y, si no lo hay, recorre la lista de usuarios e imprime sus nombres en la consola.
+const numeros = [1, 2, 3, 4, 5];
 
-//En este ejemplo, estamos utilizando callbacks anidados para manejar los diferentes estados de la solicitud HTTP. Esto puede hacer que el código sea un poco difícil de leer y mantener, especialmente si la solicitud HTTP es más compleja.
+const numerosDuplicados = transformarLista(numeros, duplicarNumero);
+console.log('Números duplicados:', numerosDuplicados);
+
+const numerosAlCuadrado = transformarLista(numeros, elevarAlCuadrado);
+console.log('Números al cuadrado:', numerosAlCuadrado);
+
+
+/* En este ejemplo, la función transformarLista toma una lista de números y una función de transformación como argumentos, y devuelve una nueva lista que contiene los números transformados. La función duplicarNumero y la función elevarAlCuadrado son dos funciones de transformación que se pueden pasar a la función transformarLista.
+
+Luego, creamos una lista de números y llamamos a la función transformarLista dos veces, pasando la lista de números y una función de transformación diferente en cada llamada. */
