@@ -1,67 +1,24 @@
-/* Ejemplo 1*/
-// En este ejemplo, la función miFuncion recibe un argumento callback, que es una función. Después de imprimir un mensaje en la consola, miFuncion llama a la función callback que se le ha pasado como argumento.
-function miFuncion(callback) {
-    console.log('Mi función ha sido invocada.');
-    callback();
-}
-//La función miFuncion recibe como parametro la funcion descrita en los argumentos
-miFuncion(function () {
-    console.log('Este es el callback.');
-});
-/* Ejemplo 2 */
-// En este ejemplo, la función sumar recibe dos números y una función callback. Después de sumar los números, la función callback se invoca con el resultado de la suma como argumento.
-function sumar(a, b, callback) {
-    let resultado = a + b;
-    callback(resultado);
+/* Ejemplo de Callbacks anidados */
+//Supongamos que queremos cargar una lista de usuarios de una API utilizando callbacks anidados. En este ejemplo, utilizaremos la función fetch para realizar la solicitud HTTP y recuperar los datos de la API, y utilizaremos callbacks anidados para manejar los diferentes estados de la solicitud:
+function obtenerUsuarios(callback) {
+    fetch('https://jsonplaceholder.typicode.com/users')
+        .then(response => response.json())
+        .then(data => callback(null, data))
+        .catch(error => callback(error, null));
 }
 
-sumar(2, 3, function (resultado) {
-    console.log(`El resultado de la suma es: ${resultado}`);
+obtenerUsuarios((error, usuarios) => {
+    if (error) {
+        console.log(`Se produjo un error: ${error}`);
+    } else {
+        console.log('Lista de usuarios:');
+        usuarios.forEach(usuario => {
+            console.log(`- ${usuario.name}`);
+        });
+    }
 });
-/* Ejemplo 3 */
-// En este ejemplo, la función descargarDatos recibe una URL y una función callback. Después de simular una descarga de datos, la función callback se invoca con los datos descargados como argumento.
-function descargarDatos(url, callback) {
-    setTimeout(function () {
-        console.log(`Descargando datos de ${url}...`);
-        let datos = "Estos son los datos descargados.";
-        callback(datos);
-    }, 3000);
-}
+//En este ejemplo, la función obtenerUsuarios es una función que realiza una solicitud HTTP para obtener una lista de usuarios de una API. La función toma un callback como argumento, que se llama cuando se completa la solicitud. Si la solicitud es exitosa, el callback se llama con los datos de la respuesta como segundo argumento. Si la solicitud falla, el callback se llama con el error como primer argumento.
 
-descargarDatos("https://www.ejemplo.com", function (datos) {
-    console.log(`Los datos descargados son: ${datos}`);
-});
-/* ===> CALLBACKS CON FUNCIONES FLECHA <=== */
+//Luego, la función obtenerUsuarios se llama pasando un callback que imprime la lista de usuarios en la consola. El callback verifica si hay un error y, si no lo hay, recorre la lista de usuarios e imprime sus nombres en la consola.
 
-/* Ejemplo 1 */
-let miFuncion = (callback) => {
-    console.log('Mi función ha sido invocada.');
-    callback();
-}
-
-miFuncion(() => {
-    console.log('Este es el callback.');
-});
-
-/* Ejemplo 2 */
-let sumar = (a, b, callback) => {
-    let resultado = a + b;
-    callback(resultado);
-}
-
-sumar(2, 3, (resultado) => {
-    console.log(`El resultado de la suma es: ${resultado}`);
-});
-
-/* Ejemplo 3 */
-let descargarDatos = (url, callback) => {
-    setTimeout(() => {
-        console.log(`Descargando datos de ${url}...`);
-        let datos = "Estos son los datos descargados.";
-        callback(datos);
-    }, 3000);
-}
-
-descargarDatos("https://www.ejemplo.com", (datos) => {
-    console.log(`Los datos descargados son: ${datos}`);
-});
+//En este ejemplo, estamos utilizando callbacks anidados para manejar los diferentes estados de la solicitud HTTP. Esto puede hacer que el código sea un poco difícil de leer y mantener, especialmente si la solicitud HTTP es más compleja.
